@@ -6,13 +6,16 @@ import LineImage from '../utility/images/LineImage.png'
 const ChoosePlan = () => {
   const [isMonthly, setIsMonthly] = useState(true);
   const [value, setValue] = useState("54")
+  const [planMonth, setPlanMonth] = useState("month")
   const handleToggleYearly = () => {
     setIsMonthly(false);
     setValue("1054")
+    setPlanMonth("year")
   }
   const handleToggleMonthly= () => {
     setIsMonthly(true);
     setValue("54")
+    setPlanMonth("month")
   }
   return (
     <div className='flex flex-col items-center mt-[76px]' style={{backgroundImage:`url(${LineImage})`, backgroundSize: "100% 100%"}}>
@@ -34,9 +37,9 @@ const ChoosePlan = () => {
             <div className='flex justify-end items-end items-end w-full'><img src={podcast} className='right-0.5'></img></div>
         </div>
         <div className='w-full flex flex-row justify-center items-center mt-[50px]'>
-            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] bg-white border-[2px] border-purple-900 p-3 rounded-md flex flex-col justify-between shadow-lg"} planType={"Basic"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900"} textColor={"purpleColor text-[30px] font-bold"} value={value}/>
-            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] ghostPurple p-3 rounded-md flex flex-col justify-between whiteColor shadow-lg"} planType={"Premium"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900 bg-white"} textColor={"text-[30px] font-bold"} value={value}/>
-            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] bg-white border-[2px] border-purple-900 p-3 rounded-md flex flex-col justify-between shadow-lg"} planType={"Basic"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900"} textColor={"purpleColor text-[30px] font-bold"} value={value}/>
+            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] bg-white border-[2px] border-purple-900 p-3 rounded-md flex flex-col justify-between shadow-lg"} planType={"Basic"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900"} textColor={"purpleColor text-[30px] font-bold"} value={value} planMonth={planMonth}/>
+            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] ghostPurple p-3 rounded-md flex flex-col justify-between whiteColor shadow-lg"} planType={"Premium"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900 bg-white"} textColor={"text-[30px] font-bold"} value={value} planMonth={planMonth}/>
+            <PlanCard classes={"w-[303px] h-[357px] p-[35px] m-[30px] bg-white border-[2px] border-purple-900 p-3 rounded-md flex flex-col justify-between shadow-lg"} planType={"Basic"} btnClass={"purpleColor w-[149px] h-[44px] rounded-md text-[12px] border-[1px] border-purple-900"} textColor={"purpleColor text-[30px] font-bold"} value={value} planMonth={planMonth}/>
         </div>
     </div>
   )
